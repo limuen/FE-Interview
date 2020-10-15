@@ -62,11 +62,11 @@ flex 布局可以帮我们快速布局一些区块，实现你想要的效果，
 
 参考：
 
-[CSS 动画原理及硬件加速](http://www.cnblogs.com/shytong/p/5419565.html)
+1. [CSS 动画原理及硬件加速](http://www.cnblogs.com/shytong/p/5419565.html)
 
-[CSS 动画之硬件加速](https://www.w3cplus.com/css3/introduction-to-hardware-acceleration-css-animations.html)
+2. [CSS 动画之硬件加速](https://www.w3cplus.com/css3/introduction-to-hardware-acceleration-css-animations.html)
 
-[CSS3 硬件加速也有坑！！！](https://div.io/topic/1348)
+3. [CSS3 硬件加速也有坑！！！](https://div.io/topic/1348)
 
 ### 8.重绘和回流（重排）是什么，如何避免？
 
@@ -75,11 +75,11 @@ DOM 的变化影响到了元素的几何属性（宽高），浏览器重新计�
 减少重绘和重排的方法：<br /> 1.不在布局信息改变时做 DOM 查询<br /> 2.使用 cssText 或者 className 一次性改变属性<br /> 3.使用 fragment<br /> 4.对于多次重排的元素，如动画，使用绝对定位脱离文档流，让它的改变不影响到其他元素<br />
 参考：
 
-1.[高性能 JavaScript 重排与重绘](http://www.cnblogs.com/zichi/p/4720000.html)
+1. [高性能 JavaScript 重排与重绘](http://www.cnblogs.com/zichi/p/4720000.html)
 
-2.[网页性能管理详解](http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html)
+2. [网页性能管理详解](http://www.ruanyifeng.com/blog/2015/09/web-page-performance-in-depth.html)
 
-3.[重排重绘，看这一篇就够了](https://juejin.im/entry/582f16fca22b9d006b7afd89)
+3. [重排重绘，看这一篇就够了](https://juejin.im/entry/582f16fca22b9d006b7afd89)
 
 ### 9.说一说你了解的圣杯布局和双飞翼布局？
 
@@ -107,13 +107,13 @@ css3 的 animation 是 css3 新增的动画属性，这个 css3 动画的每一�
 
 参考：
 
-[MDN Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
+1. [MDN Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
 
 ### 12.说一下你了解的CSS选择器？
 
 参考：
 
-[CSS 选择器参考手册](http://www.w3school.com.cn/cssref/css_selectors.asp)
+1. [CSS 选择器参考手册](http://www.w3school.com.cn/cssref/css_selectors.asp)
 
 
 ### 13.BFC是什么？介绍一下，如何触发BFC？
@@ -122,9 +122,9 @@ BFC也就是常说的块格式化上下文，这是一个独立的渲染区域�
 
 参考：
 
-[前端精选文摘：BFC 神奇背后的原理](http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html)
+1. [前端精选文摘：BFC 神奇背后的原理](http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html)
 
-[块格式化上下文](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context)
+2. [块格式化上下文](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context)
 
 ### 14.CSS3动画如何实现暂停？
 css3动画可以通过设置animation-play-state属性为paused来设置这个动画暂停。
@@ -132,9 +132,11 @@ css3动画可以通过设置animation-play-state属性为paused来设置这个�
 ### 15.说一说你知道哪些伪类选择器？
 
 参考：
-[CSS选择器详解（伪类）](https://blog.csdn.net/Panda_m/article/details/50084699?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param)
+
+1. [CSS选择器详解（伪类）](https://blog.csdn.net/Panda_m/article/details/50084699?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param)
 
 ### 16.简要介绍一下一种css预处理器？
 
 参考：
-[详说css与预处理器（以及less、sass、stylus的区别）](https://blog.csdn.net/ly2983068126/article/details/77737292)
+
+1. [详说css与预处理器（以及less、sass、stylus的区别）](https://blog.csdn.net/ly2983068126/article/details/77737292)

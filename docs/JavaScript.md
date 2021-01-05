@@ -102,3 +102,89 @@ AMD是解决JS模块化的规范，实现这样的一个模块加载器的关键
 
 ### 9.js如何判断网页中图片加载成功或者失败
 使用onload事件运行加载成功，使用onerror事件判断失败
+
+### 10.递归和迭代的区别是什么，各有什么优缺点？
+程序调用自身称为递归，利用变量的原值推出新值称为迭代，递归的优点
+大问题转化为小问题，可以减少代码量，同时应为代码精简，可读性好，
+缺点就是，递归调用浪费了空间，而且递归太深容易造成堆栈的溢出。迭代的好处
+就是代码运行效率好，因为时间只因循环次数增加而增加，而且没有额外的空间开销，
+缺点就是代码不如递归简洁
+
+参考：
+
+[深究递归和迭代的区别、联系、优缺点及实例对比](http://blog.csdn.net/laoyang360/article/details/7855860)
+
+### 11.策略模式是什么，说一下你的理解？
+策略模式就是说我们将一系列的算法封装起来，使其相互之间可以替换，封装的算法具有一定的独立性，不会随客户端的变化而变化，比较常见的使用常见就是类似于
+表单验证这种多场景的情况，我们使用策略模式就可以避免使用一堆的if...else。
+
+### 12.什么是事件循环（EVENT LOOP）？
+我们常常说js是单线程的，是指js执行引擎是单线程的，除了这个单线程，还有一个
+任务队列，在执行js代码的过程中，执行引擎遇到注册的延时方法，如定时器，DOM事件，
+会将这些方法交给相应的浏览器模块处理，当这些延时方法有触发条件去触发的时候，
+这些延时方法会被添加至任务队列，而这些任务队列中的方法只有js的主线程空闲了才会执行，
+这也就是说我们常常用的定时器定的时间参数只是一个触发条件，具体多少时间后执行其实还需要看
+js主线程空闲与否
+
+参考：
+
+[【转向Javascript系列】从setTimeout说事件循环模型](http://www.alloyteam.com/2015/10/turning-to-javascript-series-from-settimeout-said-the-event-loop-model/)
+
+[深入浅出Javascript事件循环机制(上)](https://zhuanlan.zhihu.com/p/26229293)
+
+[深入浅出JavaScript事件循环机制(下)](https://zhuanlan.zhihu.com/p/26238030)
+
+[并发模型与事件循环](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop)
+
+### 13.原生JS操作DOM的方法有哪些？
+获取节点的方法getElementById、getElementsByClassName、getElementsByTagName、
+getElementsByName、querySelector、querySelectorAll,对元素属性进行操作的 getAttribute、
+setAttribute、removeAttribute方法，对节点进行增删改的appendChild、insertBefore、replaceChild、removeChild、
+createElement等
+
+### 14.typeof操作符返回值有哪些，对undefined、null、NaN使用这个操作符分别返回什么
+typeof的返回值有undefined、boolean、string、number、object、function、symbol。对undefined
+使用返回undefined、null使用返回object，NaN使用返回number
+
+### 15.实现一个类型判断函数，需要鉴别出基本类型、function、null、NaN、数组、对象？
+只需要鉴别这些类型那么使用typeof即可，要鉴别null先判断双等判断是否为null，之后使用typeof判断，如果是obejct的话，再用Array.isArray判断
+是否为数组，如果是数字再使用isNaN判断是否为NaN,（需要注意的是NaN并不是JavaScript数据类型，而是一种特殊值）如下：
+```javascript
+function type(ele) {
+  if(ele===null) {
+    return null;
+  } else if(typeof ele === 'object') {
+    if(Array.isArray(ele)) {
+      return 'array';
+    } else {
+      return typeof ele;
+    }
+  } else if(typeof ele === 'number') {
+    if(isNaN(ele)) {
+      return NaN;
+    } else {
+      return typeof ele;
+    }
+  } else{
+    return typeof ele;
+  }
+}
+``` 
+
+### 16.javascript做类型判断的方法有哪些？
+typeof、instanceof 、 Object.prototype.toString()(待续)
+
+### 17.JavaScript严格模式下有哪些不同？
++ 不允许不使用var关键字去创建全局变量，抛出ReferenceError
++ 不允许对变量使用delete操作符，抛ReferenceError
++ 不可对对象的只读属性赋值，不可对对象的不可配置属性使用delete操作符，不可为不可拓展的对象添加属性，均抛TypeError
++ 对象属性名必须唯一
++ 函数中不可有重名参数
++ 在函数内部对修改参数不会反映到arguments中
++ 淘汰arguments.callee和arguments.caller
++ 不可在if内部声明函数
++ 抛弃with语句
+
+参考：
+
+1.[javascript高级程序设计](https://book.douban.com/subject/10546125/)

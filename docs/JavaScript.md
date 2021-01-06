@@ -188,3 +188,63 @@ typeof、instanceof 、 Object.prototype.toString()(待续)
 参考：
 
 1.[javascript高级程序设计](https://book.douban.com/subject/10546125/)
+
+### 18.setTimeout和setInterval的区别，包含内存方面的分析？
+setTimeout表示间隔一段时间之后执行一次调用，而setInterval则是每间隔一段时间循环调用，直至clearInterval结束。
+内存方面，setTimeout只需要进入一次队列，不会造成内存溢出，setInterval因为不计算代码执行时间，有可能同时执行多次代码，
+导致内存溢出。
+
+参考：
+
+[JS 中settimeout和setinterval函数的区别](https://my.oschina.net/u/3636678/blog/1499852)
+
+[setTimeout() 和 setInterval() 本质区别在哪里？](https://segmentfault.com/q/1010000005989491)
+
+### 19.同源策略是什么？
+同源策略是指只有具有相同源的页面才能够共享数据，比如cookie，同源是指页面具有相同的协议、域名、端口号，有一项不同就不是同源。
+有同源策略能够保证web网页的安全性。
+
+参考：
+
+[前端必备HTTP技能之同源策略详解](http://www.jianshu.com/p/beb059c43a8b)
+
+[浏览器同源政策及其规避方法](http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html)
+
+[浏览器的同源策略](https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy)
+
+### 20.ES6之前JavaScript如何实现继承？
+ES6之前的继承是通过原型来实现的，也就是每一个构造函数都会有一个prototype属性，然后如果我们调用一个实例的方法或者属性，首先会在自身寻找，然后在
+构造函数的prototype上寻找，而prototype本质上就是一个实例，因此如果prototype上还没有则会往prototype上的构造函数的prototype寻找，因此实现继承
+可以让构造函数的prototype是父级的一个实例就是以实现继承。
+
+### 21.如何阻止事件冒泡和默认事件？
+标准的DOM对象中可以使用事件对象的stopPropagation()方法来阻止事件冒泡，但在IE8以下中IE的事件对象通过设置事件对象的cancelBubble属性为true来阻止冒泡；
+默认事件的话通过事件对象的preventDefault()方法来阻止，而IE通过设置事件对象的returnValue属性为false来阻止默认事件。
+
+### 22.addEventListener有哪些参数？
+有三个参数，第一个是事件的类型，第二个是事件的回调函数，第三个是一个表示事件是冒泡阶段还是捕获阶段捕获的布尔值，true表示捕获，false表示冒泡
+
+### 23.介绍一下Promise，底层如何实现？
+参考：
+
+[promise底层实现](https://www.cnblogs.com/zhouyideboke/p/12875355.html)
+
+[介绍下promise的特性,优缺点，内部如何实现的，动手实现一个promise (一)](https://www.cnblogs.com/James-net/archive/2020/11/12/13958533.html)
+
+
+### 24.如何实现懒加载？
+懒加载就是根据用户的浏览需要记载内容，也就是在用户即将浏览完当前的内容时进行继续加载内容，这种技术常常用来加载图片的时候使用。我们判断用户是否即将浏览到底部之后进行在家内容
+这时候可能会需要加载大量的内容，可以使用fragment来优化一下，因为大部分是使用滑动和滚轮来触发的，因此很有可能会不断触发，可以使用函数节流做一个优化，防止用户不断触发。
+
+### 25.函数节流是什么？
+函数节流就是让一个函数无法在很短的时间间隔内连续调用，而是间隔一段时间执行，这在我们为元素绑定一些事件的时候经常会用到，比如我们
+为window绑定了一个resize事件，如果用户一直改变窗口大小，就会一直触发这个事件处理函数，这对性能有很大影响。
+
+[什么是函数节流？](http://www.alloyteam.com/2012/11/javascript-throttle/)
+
+### 26.浏览器内核有哪些？分别对应哪些浏览器？
+常见的浏览器内核有Trident、Gecko、WebKit、Presto，对应的浏览器为Trident对应于IE，Gecko对应于火狐浏览器，Webkit有chrome和safari，Presto
+有Opera。
+
+### 27.什么是深拷贝，什么是浅拷贝？
+浅拷贝是指仅仅复制对象的引用，而不是复制对象本身；深拷贝则是把复制对象所引用的全部对象都复制一遍。
